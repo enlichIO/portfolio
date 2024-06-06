@@ -9,29 +9,21 @@ body {
      background-color: #790000;
 }
 
-header{
-     position: sticky;
-     top:0;
-     padding: 100px;
-     transition:background-color 0.4s ease-in-out;
-}
-
-header.scrolled{
-     background-color: ivory;
-     opacity: 0.98;
-}
 
 nav{
-     position: sticky;
-     top: 0;
+     position: fixed;
+     top: 0.1px;
+     width: 100%;
      padding: auto;
      background-color: rgba(255, 255, 255, 0.151);
      transition:background-color 0.4s ease-in-out;
+     z-index: 999;
 }
 nav.scrolled{
      background-color: rgba(255, 255, 255, 0.7);
      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
      backdrop-filter: blur(15px);
+     z-index: 999;
 }
 nav ul{
      width: auto;
@@ -49,8 +41,12 @@ nav img {
    }
    
 nav li{
-     height: 70px;
+     height: 75px;
+     transition: heigt 2.5s ease-in-out;
 
+}
+nav.scrolled li{
+     height: 50px;
 }
 nav a {
      height: 100%;
@@ -68,7 +64,22 @@ nav li:first-child{
      margin-right: auto;
      margin-top: 0px;
 }
-
+img{
+     width: 100%;
+}
+.first{
+     position: relative;
+     text-align: center;
+     color:rgb(255, 255, 255);
+}
+.center_img{
+     position: absolute;
+     scale: 200%;
+     top: 70%;
+     left: 50%;
+     transform: translate(-25%, -25%);
+     
+}
 .sidebar{
      position: fixed;
      top: 0; 
