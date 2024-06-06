@@ -15,7 +15,7 @@ nav{
      top: 0.1px;
      width: 100%;
      padding: auto;
-     background-color: rgba(255, 255, 255, 0.151);
+     background-color: rgba(255, 255, 255, 0.0);
      transition:background-color 0.4s ease-in-out;
      z-index: 999;
 }
@@ -66,6 +66,7 @@ nav li:first-child{
 }
 img{
      width: 100%;
+     margin: 0;
 }
 .first{
      position: relative;
@@ -80,6 +81,16 @@ img{
      transform: translate(-25%, -25%);
      
 }
+.history{
+     text-align: center;
+     margin 0;
+     background-color: rgba(245, 245, 220, 0.144);
+}
+
+
+
+
+
 .sidebar{
      position: fixed;
      top: 0; 
@@ -95,6 +106,73 @@ img{
      align-items: flex-start;
      justify-content: flex-start;
    }
+
+.img-overlay-container {
+     overflow: hidden;
+     position: relative;
+     width: 200%;
+   }
+   
+.image {
+     opacity: 1;
+     display: block;
+     width: 100%;
+     height: auto;
+     transition: .5s ease;
+     backface-visibility: hidden;
+     object-fit: cover;
+   }
+
+.card_container{
+     width: 100%;
+     display: flex;
+     justify-content:center;
+     flex-wrap: wrap;
+     margin-top: 20px;
+     margin-left: 0.5%;
+     margin-right: 0.5%;
+}
+.card{
+     display: flex;
+     justify-content:center;
+     width: 350px;
+     background-color: white;
+     border-radius: 10px;
+     box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+     margin:20px;
+   }
+
+
+   
+.overlay {
+     transition: .5s ease;
+     opacity: 0;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     text-align: center;
+   }
+
+   
+.img-overlay-container:hover .image {
+     opacity: 0.3;
+     transform: scale(0.9);
+   }
+   
+.img-overlay-container:hover .overlay {
+     opacity: 1;
+   }
+   
+.text {
+     color: rgba(255, 255, 255, 0.925);
+     font-size: 16px;
+     padding: 16px 32px;
+   }
+
+
 .sidebar li{
      width: 100%;
 }
@@ -115,6 +193,7 @@ img{
      .menu-button{
           display: block;
      }
+
  }
   @media(max-width: 400px){
      .sidebar{
