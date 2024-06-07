@@ -48,7 +48,7 @@
           </p>
      </section>
      <div class="card_container">
-          
+
           <div class="card">
                <div class="img-overlay-container">
                     <img class="image" src="/images/chardonnay-terlan.jpg" alt="vino" class="image">
@@ -102,30 +102,131 @@
 
           </div>
      </div>
+<br>
 
 
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+     <div class="card">
+               <div class="img-overlay-container">
+                    <img src="/images/chardonnay-terlan.jpg" alt="vino" class="image" style="width:100%">
+                    <div class="overlay">
+                         <div class="text">cabernet</div>
+                    </div>
+               </div>
+               <div class="card-content">
+                    <p>
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. A fugiat veritatis eligendi sequi
+                         molestias, voluptate praesentium quod neque iusto reprehenderit numquam delectus natus,
+                         quisquam vero cupiditate necessitatibus quis omnis facere.
+
+                    </p>
+               </div>
+
+          </div>
+  </div>
+
+  <div class="mySlides fade">
+     <div class="card1">
+               <div class="img-overlay-container">
+                    <img src="/images/chardonnay-terlan.jpg" alt="vino" class="image" style="width:100%">
+                    <div class="overlay">
+                         <div class="text">chardonnay</div>
+                    </div>
+               </div>
+               <div class="card-content">
+                    <p>
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. A fugiat veritatis eligendi sequi
+                         molestias, voluptate praesentium quod neque iusto reprehenderit numquam delectus natus,
+                         quisquam vero cupiditate necessitatibus quis omnis facere.
+
+                    </p>
+               </div>
+
+          </div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="card1" style="width: 100%;">
+               <div class="img-overlay-container">
+                    <img src="/images/chardonnay-terlan.jpg" alt="vino" class="image" style="width:100%">
+                    <div class="overlay">
+                         <div class="text">chardonnay</div>
+                    </div>
+               </div>
+               <div class="card-content">
+                    <p>
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. A fugiat veritatis eligendi sequi
+                         molestias, voluptate praesentium quod neque iusto reprehenderit numquam delectus natus,
+                         quisquam vero cupiditate necessitatibus quis omnis facere.
+
+                    </p>
+               </div>
+
+          </div>
+  </div>
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
 
 
 </body>
 
 <script>
-     function showsidebar() {
-          const sidebar = document.querySelector('.sidebar')
-          sidebar.style.display = 'flex'
-     }
-     function closesidebar() {
-          const sidebar = document.querySelector('.sidebar')
-          sidebar.style.display = 'none'
+     let slideIndex = 1;
+     showSlides(slideIndex);
+
+     // Next/previous controls
+     function plusSlides(n) {
+          showSlides(slideIndex += n);
      }
 
-     document.addEventListener('scroll', () => {
-          const header = document.querySelector('nav');
-          if (window.scrollY > 0) {
-               header.classList.add('scrolled');
-          } else {
-               header.classList.remove('scrolled');
+     // Thumbnail image controls
+     function currentSlide(n) {
+          showSlides(slideIndex = n);
+     }
+     function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          if (n > slides.length) { slideIndex = 1 }
+          if (n < 1) { slideIndex = slides.length }
+          for (i = 0; i < slides.length; i++) {
+               slides[i].style.display = "none";
           }
-     })
+          slides[slideIndex - 1].style.display = "block";
+     }
+
+
+          function showsidebar() {
+               const sidebar = document.querySelector('.sidebar')
+               sidebar.style.display = 'flex'
+          }
+          function closesidebar() {
+               const sidebar = document.querySelector('.sidebar')
+               sidebar.style.display = 'none'
+          }
+
+          document.addEventListener('scroll', () => {
+               const header = document.querySelector('nav');
+               if (window.scrollY > 0) {
+                    header.classList.add('scrolled');
+               } else {
+                    header.classList.remove('scrolled');
+               }
+          })
 </script>
 
 </html>
